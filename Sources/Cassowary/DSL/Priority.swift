@@ -1,7 +1,9 @@
-#if os(OSX) || os(iOS) || os(watchOS) || os(tvOS)
+#if canImport(Darwin)
 import Darwin
-#else
+#elseif canImport(Glibc)
 import Glibc
+#elseif canImport(CRT)
+import CRT
 #endif
 
 /// Strength of the constraint.
